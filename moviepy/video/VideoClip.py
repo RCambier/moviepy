@@ -1254,7 +1254,8 @@ class TextClip(ImageClip):
             )
 
         cmd = [
-            IMAGEMAGICK_BINARY,
+            "gm",
+            "convert",
             "-background",
             bg_color,
             "-fill",
