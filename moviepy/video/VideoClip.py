@@ -1235,14 +1235,15 @@ class TextClip(ImageClip):
     ):
 
         if text is not None:
-            if temptxt is None:
-                temptxt_fd, temptxt = tempfile.mkstemp(suffix=".txt")
-                try:  # only in Python3 will this work
-                    os.write(temptxt_fd, bytes(text, "UTF8"))
-                except TypeError:  # oops, fall back to Python2
-                    os.write(temptxt_fd, text)
-                os.close(temptxt_fd)
-            text = "@" + temptxt
+            pass
+#             if temptxt is None:
+#                 temptxt_fd, temptxt = tempfile.mkstemp(suffix=".txt")
+#                 try:  # only in Python3 will this work
+#                     os.write(temptxt_fd, bytes(text, "UTF8"))
+#                 except TypeError:  # oops, fall back to Python2
+#                     os.write(temptxt_fd, text)
+#                 os.close(temptxt_fd)
+#             text = "" + temptxt
         else:
             # use a file instead of a text.
             text = "@%" + filename
